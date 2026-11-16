@@ -246,48 +246,32 @@
               <p class="role-line">Apex · operations</p>
               <ul class="role-points">
                 <li>
-                  Consumed materials waited on a manual ERP step. On finish they
-                  go by warehouse, and the document number comes back on the
-                  job.
+                  Consumed materials waited on a manual ERP step. On finish, the
+                  document number comes back on the job.
                 </li>
                 <li>
-                  Warehouse quantities went stale between visits. A refresh
-                  pulls them from the ERP, and the job shows it finished.
+                  Stock went stale between visits. A refresh pulls it from the
+                  ERP, and the job shows that it finished.
                 </li>
                 <li>
-                  New equipment is accepted only after the ERP confirms the
-                  serial and a second register returns what the unit actually
-                  is. The same two checks can be run again later. Leading zeros
-                  on a serial no longer split one unit into two records.
+                  New equipment is accepted only after an external system
+                  confirms the unit.
                 </li>
                 <li>
-                  Customers get a message when the appointment is dispatched,
-                  and another when the technician is on the way, each with the
-                  link for that moment. Sending stays off the trigger, in a
-                  queue.
+                  The customer gets a message when the visit is dispatched, and
+                  another when the technician is on the way.
                 </li>
                 <li>
-                  A scheduled job keeps shifts aligned with working days,
-                  including deletions for days off. A shift is left alone when
-                  the time did not change.
+                  Shifts stay aligned with working days, including days off.
                 </li>
                 <li>
-                  For a site-connection request, recipients are chosen by
-                  territory and the answer (construction, consent, length, cost,
-                  deadline, contacts) exports as one row.
-                </li>
-                <li>
-                  Failed outbound calls can be resent for a chosen period, in
-                  order, once per job and method, without resetting the job to
-                  its start status. Oversized payloads are stored, and logging
-                  can be turned off without a release.
+                  A failed call can be seen and sent again, without a developer
+                  reproducing it.
                 </li>
               </ul>
               <p class="project-note">
-                Empty material is an explicit success; errors stay on the job; a
-                reversal uses the same path. A setting keeps the previous
-                integration, so cutover needs no deploy. Apex on the work-order
-                hub. The HTTP audit is the last layer, not the feature.
+                Apex on the work-order hub. The HTTP audit is the last layer,
+                not the feature.
               </p>
             </div>
           </li>
